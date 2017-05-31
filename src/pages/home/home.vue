@@ -17,7 +17,7 @@
 		<section class="hot-city-container">
 			<h4 class="title">热门城市</h4>
 			<ul class="city-list">
-				<li class="city-items" v-for="city in hotcity">{{city.name}}</li>
+				<router-link tag="li"  v-for="city in hotcity" :to="'/city/'+city.id" :key="city.id" class="city-items">{{city.name}}</router-link>
 			</ul>
 		</section>
 		<split></split>
@@ -26,7 +26,7 @@
 				<div class="city-group">
 					<h4 class="sequence">{{key}}<span>（安装字母排序）</span></h4>
 					<ul class="citys">
-						<li class="ellipsis" v-for="city in citys">{{city.name}}</li>
+						<router-link tag="li"  v-for="city in citys" :to="'/city/'+city.id" :key="city.id" class="ellipsis">{{city.name}}</router-link>
 					</ul>
 				</div>
 				<split></split>
@@ -62,7 +62,6 @@
 						sortcity[String.fromCharCode(i)]=this.groupcity[String.fromCharCode(i)];
 					}
 				}
-				console.log(sortcity)
 				return sortcity;
 			}
 		},

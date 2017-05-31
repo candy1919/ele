@@ -18,6 +18,7 @@
 		position: fixed;
 		left: 0;
 		right: 0;
+		top:0;
 		height: 1.95rem;
 		z-index: 100;
 		color:#fff;
