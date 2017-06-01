@@ -49,6 +49,9 @@ import {setStore,getStore} from '@/assets/js/func'
 			var history=getStore('placeHistory');
 			if(history){
 				this.searchCity=JSON.parse(history);
+				if(this.searchCity.length){
+					this.historyTitle=false;
+				}
 			}
 		},
 		methods:{
