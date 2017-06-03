@@ -25,11 +25,19 @@ var compiler = webpack(webpackConfig)
 
 var city = require('../src/service/tempdata/city.js')
 var home = require('../src/service/tempdata/home.js')
+var currentcity = require('../src/service/tempdata/home.js')
 var appRoutes = express.Router();
 appRoutes.get('/currentcity',function(req,res){
   res.json({
     errno:0,
+    cityid:req.query.cityid,
     data:city.currentcity
+  })
+})
+appRoutes.get('/searchCity',function(req,res){
+  res.json({
+    errno:0,
+    data:city.searchdata
   })
 })
 appRoutes.get('/home',function(req,res){
