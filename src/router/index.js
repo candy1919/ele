@@ -6,6 +6,7 @@ Vue.use(Router)
 const home = resolve => require(['@/pages/home/home'], resolve)
 const city = resolve => require(['@/pages/city/city'], resolve)
 const msite = resolve => require(['@/pages/msite/msite'], resolve)
+const shop = resolve =>require(['@/pages/shop/shop'],resolve)
 export default new Router({
   routes: [
     {
@@ -27,6 +28,10 @@ export default new Router({
         {
           path:'msite/:geohash',
           component:msite
+        },
+        {
+          path:'shop/:restaurantId',
+          component:shop
         }
       ]
     }

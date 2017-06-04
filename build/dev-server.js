@@ -26,6 +26,7 @@ var compiler = webpack(webpackConfig)
 var city = require('../src/service/tempdata/city.js')
 var home = require('../src/service/tempdata/home.js')
 var currentcity = require('../src/service/tempdata/home.js')
+var msite = require('../src/service/tempdata/msite.js')
 var appRoutes = express.Router();
 appRoutes.get('/currentcity',function(req,res){
   res.json({
@@ -44,6 +45,24 @@ appRoutes.get('/home',function(req,res){
   res.json({
     errno:0,
     data:home
+  })
+})
+appRoutes.get('/foodTypes',function(req,res){
+  res.json({
+    errno:0,
+    data:msite.foodTypes
+  })
+})
+appRoutes.get('/shoplist',function(req,res){
+  res.json({
+    errno:0,
+    data:msite.shopList
+  })
+})
+appRoutes.get('/address',function(req,res){
+  res.json({
+    errno:0,
+    data:msite.msiteAdress
   })
 })
 app.use('/api',appRoutes)
